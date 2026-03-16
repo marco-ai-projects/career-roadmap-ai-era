@@ -1,0 +1,6 @@
+services:
+  - type: static_site
+    name: career-roadmap-ai-era
+    env: static
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false

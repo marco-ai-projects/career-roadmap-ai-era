@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Roadmap in the AI Era</title>
+    <meta
+      name="description"
+      content="Explore how AI pressure may reshape major U.S. occupations over time and compare safer versus exposed career paths."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="page">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow">Career Roadmap in the AI Era</div>
+            <h1>AI Job Impact Dashboard</h1>
+            <p id="hero-copy">
+              Explore how AI pressure may reshape major U.S. occupations over time, from current
+              pressure to 5-year scenario views.
+            </p>
+            <div class="chip-row" id="hero-chips"></div>
+          </div>
+
+          <aside class="snapshot-card">
+            <div class="mini-label">Snapshot</div>
+            <div class="snapshot-list" id="snapshot-list"></div>
+          </aside>
+        </section>
+
+        <section class="kpi-grid" id="kpi-grid"></section>
+
+        <section class="top-grid">
+          <article class="panel panel-spotlight">
+            <div class="panel-head">
+              <div>
+                <div class="mini-label">Spotlight</div>
+                <h2 id="spotlight-title">Loading...</h2>
+              </div>
+              <div class="score-pill" id="spotlight-score"></div>
+            </div>
+
+            <div class="spotlight-stats" id="spotlight-stats"></div>
+
+            <div class="panel-section">
+              <div class="mini-label">Why this score</div>
+              <p class="body-copy" id="spotlight-summary"></p>
+              <div class="driver-grid">
+                <div>
+                  <div class="mini-label">Exposure drivers</div>
+                  <div class="chip-row compact" id="exposure-drivers"></div>
+                </div>
+                <div>
+                  <div class="mini-label">Resilience drivers</div>
+                  <div class="chip-row compact" id="resilience-drivers"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-section">
+              <div class="panel-head compact">
+                <div>
+                  <div class="mini-label">Role Context Overlay</div>
+                  <h3>Generic occupation vs enterprise PM reality</h3>
+                </div>
+                <div class="score-pill" id="context-score"></div>
+              </div>
+              <p class="body-copy" id="context-description"></p>
+
+              <div class="segmented" id="context-preset-controls"></div>
+              <div class="context-metric-grid" id="context-metrics"></div>
+              <div class="context-notes" id="context-notes"></div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <div class="mini-label">Large-Role Watchlist</div>
+                <h2>Most exposed by selected horizon</h2>
+              </div>
+            </div>
+            <div class="stack-list" id="watchlist"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <div class="mini-label">Safer Examples</div>
+                <h2>Large roles with stronger natural barriers</h2>
+              </div>
+            </div>
+            <div class="stack-list" id="safer-list"></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="mini-label">Controls</div>
+              <h2>Search, filter, and change the forecast window</h2>
+            </div>
+          </div>
+
+          <div class="controls-grid">
+            <label class="control">
+              <span class="mini-label">Occupation search</span>
+              <input id="search-input" type="search" placeholder="Try product manager, plumber, accountant..." />
+            </label>
+
+            <label class="control">
+              <span class="mini-label">Family filter</span>
+              <select id="family-filter"></select>
+            </label>
+
+            <div class="control">
+              <span class="mini-label">Order list by</span>
+              <div class="segmented" id="sort-controls"></div>
+              <div class="control-note" id="sort-note"></div>
+            </div>
+          </div>
+
+          <div class="segmented horizon-wrap" id="horizon-controls"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="mini-label">Heat Map</div>
+              <h2 id="heatmap-title">Top occupations by employment</h2>
+            </div>
+            <div class="chip subtle" id="heatmap-meta"></div>
+          </div>
+          <div class="row-list" id="row-list"></div>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <div class="mini-label">Market Signals</div>
+                <h2>What is moving the model right now</h2>
+              </div>
+            </div>
+            <div class="signal-list" id="market-signals"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <div class="mini-label">Methodology</div>
+                <h2>How to read the heat map</h2>
+              </div>
+            </div>
+            <p class="body-copy" id="method-summary"></p>
+            <div class="chip-row compact" id="method-weights"></div>
+            <div class="source-list" id="sources"></div>
+            <div class="refresh-note" id="refresh-note"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+  </html>
