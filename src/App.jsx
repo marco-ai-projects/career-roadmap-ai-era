@@ -545,6 +545,7 @@ function App() {
   const [horizon, setHorizon] = useState("now");
   const [contextPreset, setContextPreset] = useState("fortune100-pm");
   const [selectedCode, setSelectedCode] = useState(null);
+  const [riskBucketFilter, setRiskBucketFilter] = useState("All");
   const [controlsPinned, setControlsPinned] = useState(false);
   const controlsRef = useRef(null);
 
@@ -662,6 +663,10 @@ function App() {
 
   if (family !== "All") {
     visibleRows = visibleRows.filter((occupation) => occupation.family === family);
+  }
+
+  if (riskBucketFilter !== "All") {
+    visibleRows = visibleRows.filter((occupation) => occupation.bucket === riskBucketFilter);
   }
 
   if (query.length >= 2) {
@@ -921,7 +926,7 @@ function App() {
               </div>
             </div>
 
-            <div className="risk-legend" role="legend" aria-label="Risk level color key">
+            <div className={`risk-legend ${riskBucketFilter !== "All" ? "has-active-filter" : ""}`} role="group" aria-label="Risk level color key">
               {[
                 { label: "Safer", desc: "< 25%", score: 15 },
                 { label: "Watch", desc: "25-49%", score: 35 },
@@ -929,11 +934,19 @@ function App() {
                 { label: "High risk", desc: "70%+", score: 80 },
               ].map((item) => {
                 const t = riskTone(item.score);
+                const isActive = riskBucketFilter === item.label;
                 return (
-                  <div key={item.label} className="risk-legend-item" style={{ background: t.background, borderColor: t.border }}>
-                    <span className="risk-legend-label">{item.label}</span>
+                  <button 
+                    key={item.label} 
+                    type="button"
+                    className={`risk-legend-item ${isActive ? "active" : ""}`} 
+                    style={{ background: isActive ? t.background : 'transparent', borderColor: t.border, color: isActive ? 'var(--text)' : 'var(--text-soft)' }}
+                    onClick={() => setRiskBucketFilter(isActive ? "All" : item.label)}
+                    aria-pressed={isActive}
+                  >
+                    <span className="risk-legend-label" style={{ fontWeight: 600 }}>{item.label}</span>
                     <span className="risk-legend-range">{item.desc}</span>
-                  </div>
+                  </button>
                 );
               })}
             </div>
