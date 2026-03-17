@@ -2,11 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const HORIZONS = [
   { id: "now", label: "Now" },
-  { id: "1m", label: "1 month" },
   { id: "3m", label: "3 months" },
-  { id: "6m", label: "6 months" },
   { id: "12m", label: "1 year" },
-  { id: "18m", label: "18 months" },
   { id: "24m", label: "2 years" },
   { id: "36m", label: "3 years" },
   { id: "48m", label: "4 years" },
