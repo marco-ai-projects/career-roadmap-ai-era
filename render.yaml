@@ -2,5 +2,6 @@ services:
   - type: static_site
     name: career-roadmap-ai-era
     env: static
-    staticPublishPath: .
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
     pullRequestPreviewsEnabled: false
