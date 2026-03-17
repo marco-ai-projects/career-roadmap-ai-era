@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 const HORIZONS = [
   { id: "now", label: "Now" },
-  { id: "3m", label: "3 months" },
+  { id: "6m", label: "6 months" },
   { id: "12m", label: "1 year" },
   { id: "24m", label: "2 years" },
   { id: "36m", label: "3 years" },
